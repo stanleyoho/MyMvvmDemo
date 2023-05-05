@@ -26,3 +26,8 @@ Ambient context
 透過修改環境物件，例Singleton。使用Ambient context是較不建議的作法。
 
 在寫單元測試時，DI可說是非常重要的技巧，把對於某個物件的控制權移轉給第三方，解開了相依物件的耦合。之後開始Android的測試時，我們將再介紹DI的框架，讓DI的使用更方便。
+
+Note: 
+-版本匹配問題
+Mockito * - 2.17.0 => Java 8
+Mockito 2.18.0 - 3.2.4 => Java 11
