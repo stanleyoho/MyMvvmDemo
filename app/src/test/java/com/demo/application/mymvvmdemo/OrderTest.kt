@@ -1,13 +1,9 @@
 package com.demo.application.mymvvmdemo
 
-import com.demo.application.mymvvmdemo.ui.test02.IWeather
-import com.demo.application.mymvvmdemo.ui.test03.IEmailUtil
-import com.demo.application.mymvvmdemo.ui.test03.MockEmailUtil
-import com.demo.application.mymvvmdemo.ui.test03.Order
+import com.demo.application.mymvvmdemo.test.test03.MockEmailUtil
+import com.demo.application.mymvvmdemo.test.test03.Order
 import org.junit.Assert
 import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
 
 class OrderTest {
 

@@ -1,4 +1,4 @@
-package com.demo.application.mymvvmdemo.ui.test03
+package com.demo.application.mymvvmdemo.test.test03
 
 interface IEmailUtil {
     fun sendCustomer(email: String)

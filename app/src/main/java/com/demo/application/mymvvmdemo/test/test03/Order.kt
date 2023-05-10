@@ -1,7 +1,7 @@
-package com.demo.application.mymvvmdemo.ui.test03
+package com.demo.application.mymvvmdemo.test.test03
 
-import com.demo.application.mymvvmdemo.ui.test02.StubWeather
-import com.demo.application.mymvvmdemo.ui.test02.Umbrella
+import com.demo.application.mymvvmdemo.test.test02.StubWeather
+import com.demo.application.mymvvmdemo.test.test02.Umbrella
 
 class Order {
     fun insertOrder(email:String, quantity:Int, price:Int, emailUtil:IEmailUtil){

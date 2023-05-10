@@ -1,4 +1,4 @@
-package com.demo.application.mymvvmdemo.ui.test02
+package com.demo.application.mymvvmdemo.test.test02
 
 class StubWeather : IWeather {
 

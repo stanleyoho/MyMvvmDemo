@@ -1,9 +1,8 @@
 package com.demo.application.mymvvmdemo
 
-import com.demo.application.mymvvmdemo.ui.test02.IWeather
-import com.demo.application.mymvvmdemo.ui.test02.StubWeather
-import com.demo.application.mymvvmdemo.ui.test02.Umbrella
-import com.demo.application.mymvvmdemo.ui.test03.Order
+import com.demo.application.mymvvmdemo.test.test02.IWeather
+import com.demo.application.mymvvmdemo.test.test02.StubWeather
+import com.demo.application.mymvvmdemo.test.test02.Umbrella
 import org.junit.Assert
 import org.junit.Test
 import org.mockito.Mockito

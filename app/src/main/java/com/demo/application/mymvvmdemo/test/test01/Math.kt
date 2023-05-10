@@ -1,4 +1,4 @@
-package com.demo.application.mymvvmdemo.ui.test01
+package com.demo.application.mymvvmdemo.test.test01
 
 class Math {
     fun add(number1: Int, number2: Int): Int {

@@ -1,4 +1,4 @@
-package com.demo.application.mymvvmdemo.ui.test03
+package com.demo.application.mymvvmdemo.test.test03
 
 class MockEmailUtil:IEmailUtil {
     // receiveEmail 用來記錄由sendCustomer傳進來的Email

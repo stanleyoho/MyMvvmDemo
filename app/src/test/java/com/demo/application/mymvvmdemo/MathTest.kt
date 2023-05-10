@@ -1,6 +1,6 @@
 package com.demo.application.mymvvmdemo
 
-import com.demo.application.mymvvmdemo.ui.test01.Math
+import com.demo.application.mymvvmdemo.test.test01.Math
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before

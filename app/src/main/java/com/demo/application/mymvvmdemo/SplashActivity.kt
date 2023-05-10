@@ -14,7 +14,9 @@ class SplashActivity : AppCompatActivity() {
             runOnUiThread{
                 startActivity(Intent(this,MainActivity::class.java))
                 overridePendingTransition(R.anim.fw_slide_in_left,R.anim.fw_slide_out_right)
+
+                finish()
             }
-        },2000)
+        },1000)
     }
 }
