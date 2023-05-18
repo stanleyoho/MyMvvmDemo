@@ -14,6 +14,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.CompoundButton
 import android.widget.EditText
@@ -21,6 +22,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.SwitchCompat
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -60,18 +62,15 @@ class MainFragment : Fragment() {
 
         resolver = context?.contentResolver
         clipboardManager = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        text.requestFocus()
+
+        text.setOnFocusChangeListener { v, hasFocus ->
+            showKeyboard(hasFocus)
+        }
 
         val font1 =  Typeface.createFromAsset(context?.assets,"fonts/aclonica.ttf")
         val font2 =  Typeface.createFromAsset(context?.assets,"fonts/vampiro_one.ttf")
-
-        text.setOnFocusChangeListener { v, hasFocus ->
-            if(hasFocus){
-                Log.d("Darren","focus")
-            }else{
-                Log.d("Darren","no focus")
-            }
-        }
+        text.requestFocus()
+        text.typeface = font2
 
         btn1.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -83,9 +82,9 @@ class MainFragment : Fragment() {
 
         btn2.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                viewModel.color.value = context?.getColor(R.color.purple_200)
+                viewModel.color.value = context?.getColor(R.color.purple_700)
             } else {
-                viewModel.color.value = context?.getColor(R.color.teal_200)
+                viewModel.color.value = context?.getColor(R.color.black)
             }
         })
 
@@ -143,6 +142,16 @@ class MainFragment : Fragment() {
             Snackbar.make(layout,"copy success",Snackbar.LENGTH_SHORT).show()
         }catch (e:java.lang.Exception){
             Toast.makeText(context!!,e.toString(),Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun showKeyboard(isShow:Boolean) {
+        val inputMethodManager = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        if(isShow){
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED,0)
+        }else{
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED,1)
         }
 
     }
